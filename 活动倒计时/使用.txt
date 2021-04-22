@@ -1,0 +1,14 @@
+        var countdown = new Countdown({
+            selector: '#ctime' + prid,
+            msgBefore: "敬请期待",
+            msgAfter: "活动结束",
+            msgPattern: "{hours}<em>时</em>{minutes}<em>分</em>{seconds}<em>秒</em>",
+            dateStart: new Date(stime),
+            dateEnd: new Date(etime),
+            leadingZeros: true,
+            onStart: function () { },
+            onEnd: function () {
+                $("#item" + prid).find(".price_sp").addClass("hide");
+                $("#item" + prid).find(".price_wh").removeclass("hide");
+            }
+        });
